@@ -11,7 +11,7 @@ function Register() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/register", {
+      .post("https://login-logout-api.onrender.com/register", {
         name: nameRef.current?.value,
         email: emailRef.current?.value,
         password: passwordRef.current?.value,
