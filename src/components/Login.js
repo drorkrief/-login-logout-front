@@ -8,7 +8,7 @@ function LogIn() {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios
-          .post("/login", {
+          .post("https://login-logout-api.onrender.com/login", {
             // name: nameRef.current?.value,
             email: emailRef.current?.value,
             password: passwordRef.current?.value,
