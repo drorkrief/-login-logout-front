@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Register from "./components/Register";
 import { Routes, Route, Link, useSearchParams } from "react-router-dom";
@@ -8,6 +8,7 @@ import ErrorPath from "./components/ErrorPath";
 import About from "./components/About";
 import MailVerification from "./components/MailVerification";
 import { QueryClientProvider, QueryClient } from "react-query";
+import Dashboard from "./components/Dashboard";
 
 const queryClient = new QueryClient();
 function App() {
@@ -15,7 +16,7 @@ function App() {
   // const [login, setLogin] = useState();
   let urlparams = searchParams.entries();
   console.log("searchParams.get(code)", urlparams);
-
+  const [user, setUser] = useState(null);
   return (
     <QueryClientProvider client={queryClient}>
       <div className="App">
@@ -44,9 +45,10 @@ function App() {
         {/* {!login ? null : login === "Login" ? <Login /> : <SignUp />} */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="logIn" element={<LogIn />} />
+          <Route path="logIn" element={<LogIn setUser={setUser} />} />
           <Route path="register" element={<Register />} />
           <Route path="about" element={<About />} />
+          <Route path="dashboard" element={<Dashboard user={user} />} />
           <Route
             path="verification"
             element={
