@@ -15,7 +15,7 @@ function App() {
   const [searchParams, setSearchParams] = useSearchParams();
   // const [login, setLogin] = useState();
   let urlparams = searchParams.entries();
-  console.log("searchParams.get(code)", urlparams);
+  // console.log("searchParams.get(code)", urlparams);
   const [user, setUser] = useState(null);
   return (
     <QueryClientProvider client={queryClient}>
@@ -24,16 +24,16 @@ function App() {
         <nav className="nav">
           <ul className="topnav">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">בית</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/about">אודותינו</Link>
             </li>
             <li>
-              <Link to="/logIn">LogIn</Link>
+              <Link to="/logIn">חיבור</Link>
             </li>
             <li>
-              <Link to="/register">register</Link>
+              <Link to="/register">הרשמה</Link>
             </li>
           </ul>
         </nav>

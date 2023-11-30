@@ -1,0 +1,44 @@
+.dashboardMenu{
+    color: blue;
+    background: brown;
+    position: sticky;
+    height: 94vh;
+    width: 300px;
+    top: 6.5vh;
+}
+.dashboardMain{
+    display: flex;
+    
+}
+#upFile{
+    display: none;
+}
+#upFileLable{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
+  tbody tr:last-child{
+    background: rgb(71, 119, 221);
+    color: #dddddd;
+    font-weight: bold;
+    font-family: arial, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }

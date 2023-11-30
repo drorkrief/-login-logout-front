@@ -1,24 +1,16 @@
 import React from "react";
-const fileLink = "http://login-logout-front.onrender.com/students_list.xlsx";
+import * as XLSX from "xlsx/xlsx.mjs";
+const xlsxData = [{ שם_פרטי: "דוד", שם_משפחה: "כהן", כיתה: "א" }];
 function Getcxl() {
-  const downloadXlsxFile = (url) => {
-    const fileName = url.split("/").pop();
-    const aTag = document.createElement("a");
-    aTag.href = url;
-    aTag.setAttribute("download", fileName);
-    document.body.appendChild(aTag);
-    aTag.click();
-    aTag.remove();
+  const createXlsx = () => {
+    let wb = XLSX.utils.book_new(),
+      ws = XLSX.utils.json_to_sheet(xlsxData);
+    XLSX.utils.book_append_sheet(wb, ws, "רשימת תלמידים");
+    XLSX.writeFile(wb, "dtudentsList.xlsx");
   };
   return (
     <>
-      <button
-        onClick={() => {
-          downloadXlsxFile(fileLink);
-        }}
-      >
-        download file
-      </button>
+      <button onClick={createXlsx}>הורד קובץ תלמידים למילוי</button>
     </>
   );
 }
